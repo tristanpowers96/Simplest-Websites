@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, width=100vw">
+  <title>Photo Shoot</title>
+  <link rel="stylesheet" href="/static/css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="/static/templates/Photo Shoot/css/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="/static/js/bootstrap.js"></script>
+  <script src="/static/js/jquery.waypoints.min.js"></script>
+  <script src="/static/js/scroll.js"></script>
+  <script src="/static/js/jquery.paroller.min.js"></script>
+  <script>
+
+  $('document').ready(function() {
+
+    $('.paroller').paroller({
+      transition: 'transform 1s ease-out'
+    });
+
+  });
+
+  </script>
+</head>
+
+<body>
+  <header>
+    <div class="logo"><img src="/static/templates/Photo Shoot/images/mock_logo.png" /></div>
+    <nav>
+      <a href="#">HOME</a>
+      <a href="#">ABOUT</a>
+      <a href="#">PORTFOLIO</a>
+      <a href="#">BLOG</a>
+      <a href="#">CONTACT</a>
+    </nav>
+  </header>
+  <div class="background">
+    <img src="/static/templates/Photo Shoot/images/background.jpg" alt="">
+    <div class="title">
+      <h1>A photoshoot<br>for every occasion.</h1>
+      <p>The world is beautiful. Capture it.</p>
+      <button type="button" name="portfolio">Portfolio</button>
+    </div>
+  </div>
+
+  <section class="main-content">
+    <div class="left">
+      <div class="display-left">
+        <div class="square-black-left animate paroller" data-paroller-factor="-0.6" data-paroller-type="foreground" data-paroller-direction="horizontal"></div>
+        <img class="content-image-left animate paroller" src="/static/templates/Photo Shoot/images/picture_1_optimized.jpg" alt="" data-paroller-factor="0.6" data-paroller-type="foreground" data-paroller-direction="horizontal">
+      </div>
+    </div>
+    <div class="right">
+      <div class="caption-right paroller" data-paroller-factor="0.2" data-paroller-type="foreground" data-paroller-direction="vertical">
+        <h2>Album</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+          ex ea commodo consequat.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="main-content">
+    <div class="right">
+      <div class="display-right">
+        <div class="square-black-right animate paroller" data-paroller-factor="0.6" data-paroller-type="foreground" data-paroller-direction="horizontal"></div>
+        <img class="content-image-right animate paroller" src="/static/templates/Photo Shoot/images/picture_2.jpg" alt="" data-paroller-factor="-0.6" data-paroller-type="foreground" data-paroller-direction="horizontal">
+      </div>
+    </div>
+    <div class="left">
+      <div class="caption-left animate paroller" data-paroller-factor="0.2" data-paroller-type="foreground" data-paroller-direction="vertical">
+        <h2>Album</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+          ex ea commodo consequat.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="main-content">
+    <div class="left">
+      <div class="display-left">
+        <div class="square-black-left animate paroller" data-paroller-factor="-0.6" data-paroller-type="foreground" data-paroller-direction="horizontal"></div>
+        <img class="content-image-left animate paroller" src="/static/templates/Photo Shoot/images/picture_4.jpg" alt="" data-paroller-factor="0.4" data-paroller-type="foreground" data-paroller-direction="vertical">
+      </div>
+    </div>
+    <div class="right">
+      <div class="caption-right paroller" data-paroller-factor="0.2" data-paroller-type="foreground" data-paroller-direction="vertical">
+        <h2>Album</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+          ex ea commodo consequat.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="main-content">
+    <div class="right">
+      <div class="display-right">
+        <div class="square-black-right animate paroller" data-paroller-factor="0.6" data-paroller-type="foreground" data-paroller-direction="horizontal"></div>
+        <img class="content-image-right animate paroller" src="/static/templates/Photo Shoot/images/picture_3.jpg" alt="" data-paroller-factor="-0.6" data-paroller-type="foreground" data-paroller-direction="horizontal">
+      </div>
+    </div>
+    <div class="left">
+      <div class="caption-left animate paroller" data-paroller-factor="0.2" data-paroller-type="foreground" data-paroller-direction="vertical">
+        <h2>Album</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+          ex ea commodo consequat.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div style="height: 40vh; width: 100%;"></div>
+</body>
+
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, width=100vw">
+    <title>Simplest Sites</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/dashboard.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.js"></script>
+    <script src="/static/js/jquery.waypoints.min.js"></script>
+    <script src="/static/js/dashboard_script.js"></script>
+</head>
+{% block body %}
+<body>
+  <header>
+    <nav class="header">
+      <h2 id="logo">Simplest Sites</h2>
+      <a class="account-dropdown"><h3 tab="6">{{current_user.first_name}} {{current_user.last_name}}<span class="glyphicon glyphicon-chevron-down"></span></h3></a>
+    </nav>
+  </header>
+
+  <div class="side-background">
+
+  </div>
+  <div class="content" tab="1">
+    <div class="side-bar">
+      <ul>
+        <li><a href="{{url_for('dashboard')}}" page="1">Dashboard</a></li>
+        <li><a href="{{url_for('dashboard_page', sub='getting_started')}}" page="1">Getting started</a></li>
+        <li><a href="{{url_for('dashboard_page', sub='templates')}}" page="1">Templates</a></li>
+        <hr>
+        <li><a href="{{url_for('dashboard_page', sub='my_websites')}}" page="1">My websites</a></li>
+        <li><a href="{{url_for('dashboard_page', sub='metrics')}}">Website metrics</a></li>
+        <li><a href="{{url_for('dashboard_page', sub='tools')}}" page="2">Tools</a></li>
+        <hr>
+        <li><a href="{{url_for('dashboard_page', sub='payments')}}">Saved payments</a></li>
+        <li><a href="{{url_for('dashboard_page', sub='account')}}">Account</a></li>
+        <li>{% if current_user.plan == 'Free' %}
+        <a href="#"><button type="button" class="upgrade">Upgrade</button></a>
+        {% endif %}</li>
+      </ul>
+    </div>
+    {% block content %}
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="category" page="1">
+            <div class="category-title">
+              <h2>Account</h2>
+            </div>
+            <div class="category-content">
+              <p>Username: {{current_user.username}}</p>
+              <p>Email: {{current_user.email}}</p>
+              <p>Current plan: {{current_user.plan}}
+              {% if current_user.plan == 'Free' %}
+              <button type="button"><a href="">Upgrade</a></button>
+              {% endif %}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    {% endblock %}
+<!--
+  <div class="content" tab="2">
+    <div class="side-bar">
+      <ul>
+        <li><a href="#" page="1">Manage Websites</a></li>
+        <li><a href="#" page="2">Create</a></li>
+      </ul>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="category" page="1">
+            {% if not current_user.websites %}
+            <div class="category-title">
+              <h2>My websites</h2>
+            </div>
+            <div class="category-content">
+              <p>You don't have any websites yet!</p>
+              <button type="button" page="2">Create one now</button>
+            </div>
+            {% else %}
+              {% for website in current_user.websites %}
+            <div class="category-title">
+              <h2>{{ website.name }}</h2>
+            </div>
+            <div class="category-content">
+              <p>Templates</p>
+              <div class="thumbnail">
+                <img src="{{ Image.query.filter_by(id=website.templates[0].preview).first().url }}" alt="">
+                <div class="caption">
+                  <p>{{ website.templates[0].name}}</p>
+                </div>
+              </div>
+            </div>
+              {% endfor %}
+              {% endif %}
+
+          </div>
+          <div class="category" page="2">
+            <div class="category-title">
+              <h2>Create a new website</h2>
+            </div>
+            <div class="category-content">
+              <p>Pick a name for you to remember &rarr; <input type="text" name="" placeholder="Project name"></p>
+            </div>
+            <div class="category-title">
+              <h2>Choose a domain name</h2>
+            </div>
+            <div class="category-content">
+              <p>Pick your domain name &rarr; <input type="text" name="" placeholder="example">.simplestsites.com</p>
+            </div>
+            <div class="category-title">
+              <h2>Choose a domain name</h2>
+            </div>
+            <div class="category-content">
+              <p>Pick your domain name &rarr; <input type="text" name="" placeholder="example">.simplestsites.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content" tab="3">
+    <div class="side-bar">
+      <ul>
+        <li><a href="#" page="1">My images</a></li>
+        <li><a href="#" page="2">Upload images</a></li>
+      </ul>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="category" page="1">
+            <div class="category-title">
+              <h2>Images</h2>
+            </div>
+            <div class="category-images">
+              {% for image in images %}
+              <div class="thumbnail">
+                <img src="{{image.image_url}}">
+                <p class="caption">{{image.image_filename}}</p>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="category" page="2">
+            <div class="category-title">
+              <h2>Upload Images</h2>
+            </div>
+            <div class="category-content">
+              <div class="upload">
+                <form class="form form-horizontal" role="form" action="{{url_for('dashboard')}}" method="post" enctype="multipart/form-data">
+                  {{ form.csrf_token }}
+                  <dl>
+                    <input type="file" id="browse" name="image_file" value="" style="visibility: hidden;">
+                    <label class="button" for="browse">Choose a file</label>
+                  </dl>
+                  <button type="submit">Upload image</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content" tab="4" id="tab_4">
+    <div class="side-bar">
+      <ul>
+        <li><a href="#" page="1">My templates</a></li>
+        <li><a href="#" page="2">Browse templates</a></li>
+      </ul>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="category" page="1">
+            <div class="category-title">
+              <h1>Templates</h1>
+            </div>
+            <div class="category-images">
+              {% for template in Template.query.all() %}
+              <a href="{{ url_for('template', name=template.template_name) }}">
+                <div class="thumbnail">
+                  <img src="{{Image.query.filter_by(id=template.preview).first().image_url}}">
+                  <div class="caption">
+                    <h3>{{template.template_name}}</h3>
+                  </div>
+                </div>
+              </a>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content" tab="5">
+    <div class="side-bar">
+      <ul>
+        <li><a href="#" page="1">Account details</a></li>
+        <li><a href="#" page="2">Manage subscription</a></li>
+        <li><a href="{{url_for('logout')}}">Logout</a></li>
+      </ul>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="category" page="1">
+            <div class="category-title">
+              <h2>Account</h2>
+            </div>
+            <div class="category-content">
+              <p>Username: {{current_user.username}}</p>
+              <p>Email: {{current_user.email}}</p>
+              <p>Current plan: {{current_user.plan}}
+              {% if current_user.plan == 'Free' %}
+              <button type="button">Upgrade</button>
+              {% endif %}
+              </p>
+            </div>
+          </div>
+          <div class="category" page="2">
+            <div class="category-title">
+              <h2>Subscriptions</h2>
+            </div>
+            <div class="category-content">
+              <p>Current plan: {{current_user.plan}}
+              {% if current_user.plan == 'Free' %}
+              <button type="button">Upgrade</button>
+              {% endif %}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content" tab="6">
+    <div class="side-bar">
+      <ul>
+        <li><a href="#" page="1">Account details</a></li>
+        <li><a href="#" page="2">Manage subscription</a></li>
+        <li><a href="{{url_for('logout')}}">Logout</a></li>
+      </ul>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="category" page="1">
+            <div class="category-title">
+              <h2>Account</h2>
+            </div>
+            <div class="category-content">
+              <p>Username: {{current_user.username}}</p>
+              <p>Email: {{current_user.email}}</p>
+              <p>Current plan: {{current_user.plan}}
+              {% if current_user.plan == 'Free' %}
+              <button type="button">Upgrade</button>
+              {% endif %}
+              </p>
+            </div>
+          </div>
+          <div class="category" page="2">
+            <div class="category-title">
+              <h2>Subscriptions</h2>
+            </div>
+            <div class="category-content">
+              <p>Current plan: {{current_user.plan}}
+              {% if current_user.plan == 'Free' %}
+              <button type="button">Upgrade</button>
+              {% endif %}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+-->
+</body>
+{% endblock %}
+</html>

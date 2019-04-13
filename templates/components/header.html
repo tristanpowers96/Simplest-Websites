@@ -1,0 +1,28 @@
+<header>
+  <nav class="header">
+    <h2 id="logo">Simplest Sites</h2>
+    <div class="flex-wrapper">
+      <a href="{{ url_for('login_view') }}" id="account">Get started</a>
+      <a href="#" class="dropdown-title">Contact Us</a>
+      <a href="{{ url_for('view_templates') }}" class="dropdown-title" id="templates">Templates<span class="glyphicon glyphicon-chevron-down"></span></a>
+      <div class="dropdown-content" parent="templates">
+        <a href="#" class="dropdown-item">New</a>
+        <a href="#" class="dropdown-item">Categories</a>
+        <a href="{{url_for('view_templates')}}" class="dropdown-item">View all</a>
+      </div>
+      <a href="{{ url_for('features') }}" class="dropdown-title" id="features">Features<span class="glyphicon glyphicon-chevron-down"></span></a>
+      <div class="dropdown-content" parent="features">
+        <a href="{{ url_for('feature_info', name='designtools') }}" class="dropdown-item">Design tools</a>
+        <a href="{{ url_for('feature_info', name='SEO') }}" class="dropdown-item">SEO</a>
+        <a href="{{ url_for('feature_info', name='hosting') }}" class="dropdown-item">Hosting</a>
+        <a href="{{ url_for('feature_info', name='storage') }}" class="dropdown-item">Storage</a>
+        <a href="{{ url_for('feature_info', name='domain') }}" class="dropdown-item">Domain</a>
+        <a href="{{ url_for('feature_info', name='emailservices') }}" class="dropdown-item">Email services</a>
+      </div>
+      <a href="{{ url_for('premium_plans') }}" class="dropdown-title" id="subscriptions">Subscriptions<span class="glyphicon glyphicon-chevron-down"></span></a>
+      <div class="dropdown-content" parent="subscriptions">
+        <a href="{{ url_for('premium_plans') }}" class="dropdown-item">Pricing</a>
+      </div>
+    </div>
+  </nav>
+</header>

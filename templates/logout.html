@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include 'components/header.html' %}
+<!--
+<head>
+  <link rel="stylesheet" href="/static/css/login.css"/>
+</head>
+-->
+<section class="body-start">
+  <div class="container">
+    <div class="row">
+      <div class="templates-title">
+        <h1>You have been successfully logged out.</h1>
+      </div>
+    </div>
+  <h2>Return <a href="{{ url_for('index') }}">home</a></h2>
+</section>
+<div class="placeholder"></div>
+
+
+{% endblock %}

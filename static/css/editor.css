@@ -1,0 +1,477 @@
+/*-------------------------Editor-------------------------------------*/
+#edit-window {
+  position: absolute;
+  padding: 5px;
+  visibility: hidden;
+  z-index: 100;
+  width: 50vw;
+  height: 30vh;
+  border-radius: 20px;
+  text-align: right;
+}
+
+#edit-window span {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#edit-window .accept {
+  cursor: pointer;
+  color: green;
+  font-size: 20px;
+  padding-right: 10px;
+}
+
+#edit-window .accept:hover {
+  filter: brightness(2);
+}
+
+#edit-window .cancel {
+  cursor: pointer;
+  color: red;
+  font-size: 20px;
+  padding-right: 10px;
+}
+
+#edit-window .cancel:hover {
+  filter: brightness(3);
+}
+
+#edit-window .size, #edit-window .color, #edit-window .font, #edit-window .background-color {
+  float: left;
+  padding: 5px;
+  margin: 5px;
+  background-color: white;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+#edit-window .color, #edit-window .background-color {
+  padding-bottom: 2px;
+}
+
+#edit-window .color span, #edit-window .background-color span {
+  font-size: 20px;
+  background: linear-gradient(to right, red, green, blue);
+  -webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+#edit-window .size, #edit-window .font {
+  font-size: 20px;
+  margin-left: 10px;
+  color: black
+}
+
+#edit-window .size:hover, #edit-window .color:hover, #edit-window .font:hover, #edit-window .background-color:hover {
+  transition: 0.2s;
+  filter: brightness(0.7);
+}
+
+#edit-window textarea {
+  width: 100%;
+  height: 80%;
+  outline: none;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+#edit-window.active {
+  visibility: visible;
+}
+
+#edit-window .font-family {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: visible;
+  cursor: pointer;
+  opacity: 0;
+}
+
+#edit-window.active span {
+  opacity: 1;
+  visibility: visible;
+  transition: 0.2s;
+}
+
+#edit-window textarea:focus {
+  outline: none;
+}
+
+#edit-text-button {
+  position: absolute;
+  cursor: pointer;
+  font-size: 16px;
+  color: black;
+  background-color: white;
+  border-radius: 2px;
+  opacity: 0;
+  z-index: 100;
+}
+
+#edit-text-button.active {
+  box-shadow: 0px 0px 2px 2px grey;
+  padding: 7px;
+  opacity: 1;
+  margin-bottom: 10px;
+}
+
+#edit-text-button:hover {
+  transition: 0.2s;
+  filter: brightness(0.7);
+}
+
+#colors {
+  position: absolute;
+  top: -20px;
+  left: 20px;
+}
+
+#colors div {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  margin-left: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+  float: left;
+  visibility: hidden;
+  opacity: 0;
+}
+
+#blue {
+  background-color: blue;
+}
+
+#blue.active {
+  animation: display-left 0.3s;
+  animation-fill-mode: both;
+}
+
+@keyframes display-left {
+  from {
+    visibility: hidden;
+    opacity: 0;
+    transform: translate3d(10px, 10px, 0);
+  }
+
+  to {
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+#green {
+  background-color: green;
+}
+
+#green.active {
+  animation: display-up 0.3s;
+  animation-fill-mode: both;
+}
+
+@keyframes display-up {
+  from {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+#red {
+  background-color: red;
+}
+
+#red.active {
+  animation: display-right-1 0.3s;
+  animation-fill-mode: both;
+}
+
+@keyframes display-right-1 {
+  from {
+    visibility: hidden;
+    opacity: 0;
+    transform: translate3d(-10px, 10px, 0);
+  }
+
+  to {
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+#purple {
+  background-color: purple;
+}
+
+#purple.active {
+  animation: display-right-2 0.3s;
+  animation-fill-mode: both;
+}
+
+@keyframes display-right-2 {
+  from {
+    visibility: hidden;
+    opacity: 1;
+    transform: translate3d(-20px, 10px, 0);
+  }
+
+  to {
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+#white {
+  background-color: white;
+}
+
+#white.active {
+  animation: display-right-3 0.3s;
+  animation-fill-mode: both;
+}
+
+@keyframes display-right-3 {
+  from {
+    visibility: hidden;
+    opacity: 1;
+    transform: translate3d(-30px, 10px, 0);
+  }
+
+  to {
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+#black {
+  background-color: black;
+}
+
+#black.active {
+  animation: display-right-4 0.3s;
+  animation-fill-mode: both;
+}
+
+@keyframes display-right-4 {
+  from {
+    visibility: hidden;
+    opacity: 1;
+    transform: translate3d(-40px, 10px, 0);
+  }
+
+  to {
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+#more-colors {
+  background: linear-gradient(to bottom right, white, red, blue, purple, black);
+}
+
+#more-colors.active {
+  animation: display-right-5 0.3s;
+  animation-fill-mode: both;
+}
+
+@keyframes display-right-5 {
+  from {
+    visibility: hidden;
+    opacity: 1;
+    transform: translate3d(-50px, 10px, 0);
+  }
+
+  to {
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* colorpicker styles */
+.colorpicker {
+    background-color: #222222;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 2px 2px 2px #444444;
+    color: #FFFFFF;
+    font-size: 12px;
+    position: absolute;
+    width: 460px;
+    display: none;
+    z-index: 100;
+}
+#picker {
+    cursor: crosshair;
+    float: left;
+    margin: 10px;
+    border: 0;
+    z-index: 100;
+}
+.controls {
+    float: right;
+    margin: 10px;
+    z-index: 100;
+}
+.controls > div {
+    border: 1px solid #2F2F2F;
+    margin-bottom: 5px;
+    overflow: hidden;
+    padding: 5px;
+    z-index: 100;
+}
+.controls label {
+    float: left;
+    z-index: 100;
+}
+.controls > div input {
+    background-color: #121212;
+    border: 1px solid #2F2F2F;
+    color: #DDDDDD;
+    float: right;
+    font-size: 10px;
+    height: 14px;
+    margin-left: 6px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 75px;
+    z-index: 100;
+}
+
+.slidecontainer {
+  position: absolute;
+  width: 20%;
+  top: -20px;
+  left: 25px;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.slidecontainer.active {
+  transition: 0.2s;
+  visibility: visible;
+  opacity: 1;
+}
+
+.slidecontainer .output {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: -25px;
+  left: 105%;
+}
+
+.slider {
+  position: absolute;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.9;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.editable {
+  border-style: solid;
+  border-color: black;
+  border-width: 0;
+  transition: 0.1s;
+}
+
+.editable.hover {
+  cursor: pointer;
+  background-color: rgb(255, 255, 255, 0.2);
+  transform: scale(1.05);
+  transition: 0.1s;
+}
+
+.editable.selected {
+  background-color: rgb(224, 224, 235, 0.4);
+  transform: scale(1.1);
+  box-shadow: 0 0 20px -4px black;
+  transition: 0.1s;
+}
+
+#edit-frame {
+  position: absolute;
+  position: fixed;
+  width: 100%;
+  height: 15%;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  background-color: rgb(0,0,0,0.9);
+}
+
+#edit-frame .wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#edit-frame button {
+  float: right;
+  font-family: 'Nunito', sans-serif;
+  background-color: #99ccff;
+  padding: 5px 40px 10px 40px;
+  height: 40%;
+  margin: 5vh 10px 5vh 10px;
+  border-radius: 40px;
+  border-width: 0;
+  transition: 0.1s;
+}
+
+#edit-frame button:hover {
+  background-color: #80bfff;
+  transition: 0.1s;
+}
+
+#tooltip {
+  position: absolute;
+  padding: 10px 20px 10px 20px;
+  width: auto;
+  opacity: 0;
+  z-index: 200;
+  border-radius: 20px;
+  background-color: white;
+  transition: 0.5s ease;
+}
+
+#tooltip p {
+  margin: 0;
+  font-size: 14px;
+}
+
+#tooltip.active {
+  opacity: 0.8;
+  transition: opacity 0.5s ease;
+}
+
+/*-------------------------end Editor-------------------------------------*/

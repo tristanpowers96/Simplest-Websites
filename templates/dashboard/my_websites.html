@@ -1,0 +1,59 @@
+{% extends 'dashboard/dashboard.html' %}
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="category">
+          {% if not current_user.websites %}
+          <div class="category-title">
+            <h2>My websites</h2>
+          </div>
+          <div class="category-content">
+            <p>You don't have any websites yet!</p>
+          </div>
+          {% else %}
+            {% for website in current_user.websites %}
+          <div class="category-title">
+            <h2>{{ website.name }}</h2>
+          </div>
+          <div class="category-content">
+            <p>Templates</p>
+            <div class="thumbnail">
+              <img src="{{ Image.query.filter_by(id=website.templates[0].preview).first().url }}" alt="">
+              <div class="caption">
+                <p>{{ website.templates[0].name}}</p>
+              </div>
+            </div>
+          </div>
+            {% endfor %}
+            {% endif %}
+
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="category">
+          <div class="category-title collapse_button collapsed" data-toggle="collapse" data-target=".collapse_wrapper" aria-expanded="false" aria-controls=".collapse_wrapper">
+            <h2>Create a new website<span class="glyphicon glyphicon-collapse-down"></span></h2>
+          </div>
+          <div class="collapse_wrapper collapse">
+            <div class="category-content">
+              <p>Pick a name for you to remember &rarr; <input type="text" name="" placeholder="Project name"></p>
+            </div>
+            <div class="category-title sub">
+              <h2>Choose a domain name</h2>
+            </div>
+            <div class="category-content sub">
+              <p>Pick your domain name &rarr; <input type="text" name="" placeholder="example">.simplestsites.com</p>
+            </div>
+            <div class="category-title sub">
+              <h2>Choose a domain name</h2>
+            </div>
+            <div class="category-content sub">
+              <p>Pick your domain name &rarr; <input type="text" name="" placeholder="example">.simplestsites.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

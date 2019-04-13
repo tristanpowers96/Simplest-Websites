@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, width=100vw">
+    <title>Java House</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/templates/Java House/css/style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.js"></script>
+    <script src="/static/js/jquery.waypoints.min.js"></script>
+    <script src="/static/js/scroll.js"></script>
+    {% if edit %}
+    <link rel="stylesheet" type="text/css" href="/static/css/editor.css"/>
+    <script src="/static/js/colors.js"></script>
+    <script src="/static/js/editor.js"></script>
+    {% endif %}
+</head>
+{% if edit %}
+<div id="edit-frame">
+  <div class="wrapper">
+    <button type="button" id="cancel-changes"><b>Cancel changes</b></button>
+    <b><button type="button" id="save-changes">Save changes</button></b>
+  </div>
+</div>
+<body style="margin-top: 7%">
+{% else %}
+<body>
+{% endif %}
+  <div class="load"></div>
+  <div class="full-overlay"></div>
+{% if edit %}
+{% include 'components/editor.html' %}
+<nav class="side-menu" style="margin-top: 7%">
+  <a style="cursor: pointer;" class="menu-button"><span class="glyphicon glyphicon-remove"></span></a>
+</nav>
+{% else %}
+<nav class="side-menu">
+  <a style="cursor: pointer;" class="menu-button"><span class="glyphicon glyphicon-remove"></span></a>
+</nav>
+{% endif %}
+  <header>
+    <div class="header">
+      <nav>
+        <div class="container-fluid">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-2">
+                <a style="cursor: pointer;"><span class="glyphicon glyphicon-menu-hamburger menu-button"></span></a>
+              </div>
+              <div class="col-md-2"></div>
+              <div class="col-md-2"><img src="/static/templates/Java House/images/mock_logo.jpg"/></div>
+              <div class="col-md-1"></div>
+              <div class="col-md-1"></div>
+              <div class="col-md-4">
+                <a class="editable" href="#">Menu</a>
+                <a class="editable" href="#">Locations</a>
+                <a class="editable" href="#">Contact</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="header-image editable-image"></div>
+      <div class="title">
+        <h2 class="editable" name="subtitle">Coffee is more than just a drink to us.</h2>
+        <h1 class="editable" name="title">It's our passion.</h1>
+          <span class="glyphicon glyphicon-menu-down scroll-down"></span>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="jumbotron">
+      <h2 class="animation fadeUp editable">Our process</h2>
+    </div>
+  </section>
+
+  <section class="element left">
+    <img class="thumb" src="/static/templates/Java House/images/coffee-cherries.jpg"/>
+    <div class="overlay"></div>
+    <div class="info-title animation fadeUp">
+      <h3 class="editable">Wholesome Origins</h3>
+    </div>
+    <div class="info-body animation fadeUp">
+      <ul>
+        <li><p class="editable">Lorem ipsum dolor sit amet consectetur adipiscing elit magna sollicitudin rhoncus odio, tempus.</p></li>
+        <li><p class="editable">Dictum pellentesque sollicitudin rhoncus nibh tortor lectus ex, non risus ante efficitur at sociosqu. </p></li>
+        <li><p class="editable">Fermentum amet curabitur ligula conubia porta massa dictum molestie bibendum elit justo neque in tristique.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="spacer">
+    <div class="divider"></div>
+  </div>
+
+  <section class="element animation right">
+    <img class="thumb" src="/static/templates/Java House/images/coffee-beans.jpg"/>
+    <div class="overlay"></div>
+    <div class="info-title animation fadeUp">
+      <h3 class="editable">Quality Ingredients</h3>
+    </div>
+    <div class="info-body animation fadeUp">
+      <ul>
+        <li><p class="editable">Lorem ipsum dolor sit amet consectetur adipiscing elit magna sollicitudin rhoncus odio, tempus.</p></li>
+        <li><p class="editable">Dictum pellentesque sollicitudin rhoncus nibh tortor lectus ex, non risus ante efficitur at sociosqu. </p></li>
+        <li><p class="editable">Fermentum amet curabitur ligula conubia porta massa dictum molestie bibendum elit justo neque in tristique.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="spacer">
+    <div class="divider"></div>
+  </div>
+
+  <section class="element left">
+    <img class="thumb" src="/static/templates/Java House/images/espresso_maker.jpg"/>
+    <div class="overlay"></div>
+    <div class="info-title animation fadeUp">
+      <h3 class="editable">Brewed with Love</h3>
+    </div>
+    <div class="info-body animation fadeUp">
+      <ul>
+        <li><p class="editable">Lorem ipsum dolor sit amet consectetur adipiscing elit magna sollicitudin rhoncus odio, tempus.</p></li>
+        <li><p class="editable">Dictum pellentesque sollicitudin rhoncus nibh tortor lectus ex, non risus ante efficitur at sociosqu. </p></li>
+        <li><p class="editable">Fermentum amet curabitur ligula conubia porta massa dictum molestie bibendum elit justo neque in tristique.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="jumbotron">
+      <h2 class="animation fadeUp editable">Menu</h2>
+    </div>
+  </section>
+
+  <section class="menu">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="thumbnail">
+            <img src="/static/templates/Java House/images/espresso.jpg" alt="">
+            <div class="caption animation fadeUp">
+              <h2>Espresso</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="thumbnail">
+            <img src="/static/templates/Java House/images/latte.jpg" alt="">
+            <div class="caption animation fadeUp">
+              <h2>Latte</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="thumbnail">
+            <img src="/static/templates/Java House/images/espresso.jpg" alt="">
+            <div class="caption animation fadeUp">
+              <h2>Espresso</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="thumbnail">
+            <img src="/static/templates/Java House/images/espresso.jpg" alt="">
+            <div class="caption animation fadeUp">
+              <h2>Espresso</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="thumbnail">
+            <img src="/static/templates/Java House/images/latte.jpg" alt="">
+            <div class="caption animation fadeUp">
+              <h2>Latte</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="thumbnail">
+            <img src="/static/templates/Java House/images/espresso.jpg" alt="">
+            <div class="caption animation fadeUp">
+              <h2>Espresso</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="jumbotron">
+      <h2 class="animation fadeUp editable">Find us</h2>
+    </div>
+  </section>
+
+  <section class="map">
+    <div class="map-wrapper">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48368.79512423254!2d-74.00361027728755!3d40.73893200806043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2598eb5f57ed7%3A0x25f9b50b985bb0b7!2sChase+Bank!5e0!3m2!1sen!2sus!4v1550973901544" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container-fluid">
+      <ul class="animation fadeUp">
+        <p>Navigation</p>
+        <li><a href="#">Menu</a></li>
+        <li><a href="#">Location</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <ul class="animation fadeUp">
+        <p>Contact</p>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Careers</a></li>
+      </ul>
+      <ul class="animation fadeUp">
+        <p>Legal</p>
+        <li><a href="#">Privacy policy</a></li>
+        <li><a href="#">Cookie policy</a></li>
+      </ul>
+      <ul style="float: right;" class="animation fadeUp">
+        <p>Stay connected</p>
+        <li>Sign up to our newsletter</li>
+        <li><input type="text" name="email" value=""> <button type="button" name="button">Subscribe</button>
+        <a href="http://facebook.com"><img src="/static/templates/Java House/images/facebook.svg" alt=""></a>
+        <a href="http://twitter.com"><img src="/static/templates/Java House/images/twitter.svg" alt=""></a>
+        <a href="http://instagram.com"><img src="/static/templates/Java House/images/instagram.svg" alt=""></a>
+        <a href="http://linkedin.com"><img src="/static/templates/Java House/images/linkedin.svg" alt=""></a>
+        </li>
+      </ul>
+    </div>
+    <div class="container-fluid" style="text-align: center">
+      <p>Copyright 2022 Your Company LLC. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

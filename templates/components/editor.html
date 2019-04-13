@@ -1,0 +1,65 @@
+<span id="edit-text-button" class="glyphicon glyphicon-pencil"></span>
+<div class="colorpicker">
+  <canvas id="picker" var="2" width="300" height="300"></canvas>
+
+  <div class="controls">
+      <div><label>R</label> <input type="text" id="rVal" /></div>
+      <div><label>G</label> <input type="text" id="gVal" /></div>
+      <div><label>B</label> <input type="text" id="bVal" /></div>
+      <div><label>RGB</label> <input type="text" id="rgbVal" /></div>
+      <div><label>HEX</label> <input type="text" id="hexVal" /></div>
+  </div>
+</div>
+
+<div id="tooltip">
+  <p></p>
+</div>
+
+<div id="edit-window">
+  <div id="colors">
+    <div id="blue"></div>
+    <div id="green"></div>
+    <div id="red"></div>
+    <div id="purple"></div>
+    <div id="white"></div>
+    <div id="black"></div>
+    <div id="more-colors"></div>
+  </div>
+  <div class="slidecontainer">
+    <input type="range" min="1" max="100" value="50" class="slider" id="myRange"></input>
+    <h2 class="output" contenteditable="true">42px</h2>
+  </div>
+  <span class="glyphicon glyphicon-text-size size"></span>
+  <span class="glyphicon glyphicon-italic font">
+    <select class="font-family">
+      <option value="'Arial', 'sans-serif'" style="font-family: 'Arial', 'sans-serif';">Arial</option>
+      <option value="'Arial Black', 'sans-serif'" style="font-family: 'Arial Black', 'sans-serif';">Arial Black</option>
+      <option value="'Tahoma', 'sans-serif'" style="font-family: 'Tahoma', 'sans-serif';">Tahoma</option>
+      <option value="'Trebuchet MS', 'sans-serif'" style="font-family: 'Trebuchet MS', 'sans-serif';">Trebuchet MS</option>
+      <option value="'Verdana', 'sans-serif'" style="font-family: 'Verdana', 'sans-serif';">Verdana</option>
+      <option value="'Century Gothic', 'sans-serif'" style="font-family: 'Century Gothic', 'sans-serif';">Century Gothic</option>
+      <option value="'Geneva', 'sans-serif'" style="font-family: 'Geneva', 'sans-serif';">Geneva</option>
+      <option value="'Lucida', 'sans-serif'" style="font-family: 'Lucida', 'sans-serif';">Lucida</option>
+      <option value="'Lucida Sans', 'sans-serif'" style="font-family: 'Lucida Sans', 'sans-serif';">Lucida Sans</option>
+      <option value="'Lucida Grande', 'sans-serif'" style="font-family: 'Lucida Grande', 'sans-serif';">Lucida Grande</option>
+      <option value="'Courier', 'serif'" style="font-family: 'Courier', 'serif';">Courier</option>
+      <option value="'Courier New', 'serif'" style="font-family: 'Courier New', 'serif';">Courier New</option>
+      <option value="'Georgia', 'serif'" style="font-family: 'Georgia', 'serif';">Georgia</option>
+      <option value="'Times', 'serif'" style="font-family: 'Times', 'serif';">Times</option>
+      <option value="'Times New Roman', 'serif'" style="font-family: 'Times New Roman', 'serif';">Times New Roman</option>
+      <option value="'MS Serif', 'serif'" style="font-family: 'MS Serif', 'serif';">MS Serif</option>
+      <option value="'New York', 'serif'" style="font-family: 'New York', 'serif';">New York</option>
+      <option value="'Palatino', 'serif'" style="font-family: 'Palatino', 'serif';">Palatino</option>
+      <option value="'Palatino Linotype', 'serif'" style="font-family: 'Palatino Linotype', 'serif';">Palatino Linotype</option>
+      <option value="'Courier', 'monospace'" style="font-family: 'Courier', 'monospace';">Courier</option>
+      <option value="'Courier New', 'monospace'" style="font-family: 'Courier New', 'monospace';">Courier New</option>
+      <option value="'Lucida Console', 'monospace'" style="font-family: 'Lucida Console', 'monospace';">Lucida Console</option>
+      <option value="'Monaco', 'monospace'" style="font-family: 'Monaco', 'monospace';">Monaco</option>
+    </select>
+  </span>
+  <span class="color"><span class="glyphicon glyphicon-text-color"></span></span>
+  <span class="background-color"><span class="glyphicon glyphicon-edit"></span></span>
+  <textarea id="edit-field" type="text"></textarea>
+  <span class="glyphicon glyphicon-ok accept"></span>
+  <span class="glyphicon glyphicon-remove cancel"></span>
+</div>

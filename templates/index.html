@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% block content %}
+{% include 'components/header.html' %}
+
+<div class="hook" style="will-change: transform; will-change: top; transition: 1s" data-scroll-speed="1">
+  <h1>The simplest website builder.<br> Ever.</h1>
+  <button type="button" class="start-button"><h2>Get started</h2></button>
+</div>
+
+<section id="body-start">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 info">
+        <h3 class="animation fadeUp">Pick a template, make it yours. Done.</h3>
+      </div>
+    </div>
+  </div>
+  <div class="full-width">
+    <div class="row">
+      <div class="box">
+        <h3 class="animation fadeUp">Say goodbye to complicated.</h3>
+        <p class="animation fadeUp">Find what you like, pick a color, change some text, add some pictures, leave the rest to us.</p>
+        <p class="animation fadeUp">No confusing terms or menus, done and live in minutes.</p>
+        <a href="{{url_for('register')}}">Get started<span class="glyphicon glyphicon-menu-right"></span></a>
+      </div>
+      <div class="frame">
+        <div class="border" style="will-change: transform; will-change: top;" data-scroll-speed="6"></div>
+        <div class="background" style="will-change: transform; will-change: top;" data-scroll-speed="6"></div>
+        <img class="parallax-img" data-scroll-speed="4" src="/static/images/landscape_1.jpg" src-lg="/static/images/landscape_1_750.jpg">
+      </div>
+    </div>
+    <div class="row">
+      <img class="parallax-img" id="row-image" src="/static/images/adult-beverage-break-1011333.jpg" src-lg="/static/images/adult-beverage-break-1011333_750.jpg" style="filter: drop-shadow(4px 4px 16px grey);" data-scroll-speed="7">
+      <div class="box" style="float: left; margin: auto;">
+        <h3 class="animation fadeUp">Work smarter, not harder</h3>
+        <p class="animation fadeUp">Simplicity is our philosophy. Building a website should be easy, giving you more time to do what you're best at.</p>
+        <p class="animation fadeUp">And with an intuitive interface, you don't need any training to get your website running; be done in just a few clicks.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="full-width bar">
+  <h2>Make your mark. Build your site now.</h2>
+  <button type="button" class="start-button"><h3>Sign up for free</h3></button>
+</section>
+
+<section class="full-width icons">
+  <div class="placeholder"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2">
+        <div class="thumbnail">
+          <img src="/static/images/payment-method.svg" alt="">
+          <div class="caption">
+            <h3>eCommerce</h3>
+            <p>Set up your online store and start accepting payments</p>
+            <a href="#">See eCommerce templates</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="thumbnail">
+          <img src="/static/images/blog.svg" alt="">
+          <div class="caption">
+            <h3>Blogs</h3>
+            <p>Write what you're passionate about. Easily add posts and pictures so you can focus on the hard stuff.</p>
+            <a href="#">See blog templates</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="thumbnail">
+          <img src="/static/images/shop.svg" alt="">
+          <div class="caption">
+            <h3>Retail</h3>
+            <p>Make your store visible to customers with a professional online home.</p>
+            <a href="#">See retail templates</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <div class="thumbnail">
+          <img src="/static/images/easel.svg" alt="">
+          <div class="caption">
+            <h3>Artists</h3>
+            <p>Create a beautiful portfolio to showcase your work</p>
+            <a href="#">See artistic templates</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="thumbnail">
+          <img src="/static/images/balloons.svg" alt="">
+          <div class="caption">
+            <h3>Special events</h3>
+            <p>Invite guests to your celebration with an incredible page.</p>
+            <a href="#">See event templates</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="thumbnail">
+          <img src="/static/images/camera.svg" alt="">
+          <div class="caption">
+            <h3>Photographers</h3>
+            <p>Make your work seen in a sleek digital album.</p>
+            <a href="#">See photography templates</a>
+          </div>
+        </div>
+      </div>
+      </div>
+  </div>
+</section>
+
+<div class="placeholder"></div>
+{{ footer }}
+{% endblock %}

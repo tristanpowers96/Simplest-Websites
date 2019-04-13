@@ -1,0 +1,150 @@
+.thumbnail img {
+  object-fit: cover;
+  height: 200px;
+}
+
+button {
+  font-weight: bold;
+}
+
+.body-start {
+  margin-top: 10vh;
+  background-color: white;
+}
+
+.templates-title {
+  width: 100%;
+  padding: 100px 50px 100px 50px;
+  text-align: left
+}
+
+.templates-title h1 {
+  color: black;
+}
+
+.side-bar {
+  position: absolute;
+  left: 0;
+  top: 15vh;
+  height: 80vh;
+  width: 10vw;
+  background-color: white;
+  box-shadow: 0 0 2px 2px lightgrey;
+}
+
+.button-wrapper {
+  position: relative;
+  display: block;
+  margin: 20px;
+  width: auto;
+  height: 100%;
+}
+
+.side-bar button {
+  padding: 10px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.well {
+  transition: 0.2s ease;
+}
+
+.well:hover {
+  transform: scale(1.03);
+  transition: 0.2s ease;
+}
+
+.image-focus {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+  background-color: white;
+  border-radius: 10px;
+  top: 18vh;
+  left: 20vw;
+  width: 60vw;
+  height: 80vh;
+  transition: 0.5s ease;
+}
+
+.image-focus.active {
+  z-index: 100;
+  animation-name: slideDown;
+  animation-fill-mode: forwards;
+  animation-duration: 0.5s;
+  animation-timing-function: ease;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-60vh);
+    opacity: 0;
+  }
+
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.image-focus .content {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(242, 242, 242);
+  border-radius: 10px;
+}
+
+.content h2 {
+  text-align: center;
+  font-style: italic;
+  color: black;
+  font-size: 30px;
+  width: 100%;
+  margin-top: 0;
+  padding: 10px;
+}
+
+.content .glyphicon-remove {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 20px;
+  font-size: 20px;
+  transition: 0.2s ease;
+}
+
+.content span:hover {
+  transform: scale(1.2);
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+.tile {
+  position: relative;
+}
+
+.thumbnail {
+  position: absolute;
+  border-style: none;
+  width: 20vw;
+  height: 30vh;
+  object-fit: cover;
+  padding: 0;
+  box-shadow: 4px 4px 22px -4px black;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+.thumbnail:hover {
+  transform: scale(1.05);
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+.thumbnail.dim {
+  z-index: 1;
+  filter: brightness(0.5);
+  transition: 0.2s ease;
+}

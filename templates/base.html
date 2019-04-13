@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, width=100vw">
+    <title>Simplest Sites</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.js"></script>
+    <script src="/static/js/jquery.waypoints.min.js"></script>
+    <script src="/static/js/script.js"></script>
+    <script src="/static/js/scroll.js"></script>
+    <script src="/static/js/parallax.js"></script>
+</head>
+<body>
+  <div id="loading">
+    <h1>Simplest Sites</h1>
+  </div>
+  {% block content %}
+  {% endblock %}
+  {% include 'components/footer.html' %}
+  <script>
+    $(function() {
+      setTimeout(function () {
+        $("#loading").fadeOut("swing");
+        $("#account").css('animation-play-state', 'running');
+      }, 1000);
+      setTimeout(function () {
+        $("#account").css('background-color', '#0000b3');
+      }, 3000);
+    });
+  </script>
+</body>
+</html>

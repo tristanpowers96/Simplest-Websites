@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, width=100vw">
+    <title>Editor</title>
+    <link rel="stylesheet" href="/grapesjs/dist/css/grapes.min.css">
+    <link rel="stylesheet" href="/static/editor/css/editor.css">
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Arvo|Copse|Cutive|Lora:700|Scope+One|Trocchi|Cormorant+Garamond|Proza+Libre|Taviraj|Trirong|Work+Sans" rel="stylesheet">
+</head>
+<body>
+  <div class="gjs-wrapper">
+  <div class="panel__top">
+    <div class="panel__basic-actions"></div>
+    <div class="dropdown collapse-button collapsed" data-toggle="collapse" data-target=".panel__right" aria-expanded="false">
+      <button type="button" id="layers-button" class="gjs-pn-btn" child="layers-container-wrapper"><span class="glyphicon glyphicon-align-justify"></span></button>
+    </div>
+  </div>
+    <div id="gjs"></div>
+    <div class="panel__right gjs-one-bg collapse">
+      <div class="layers-container-wrapper gjs-one-bg">
+        <div class="layers-container"></div>
+      </div>
+    </div>
+    <div class="editor_panel">
+      <img class="collapse_button" data-toggle="collapse" data-target=".collapse_wrapper" aria-expanded="false" aria-controls=".collapse_wrapper" src="/static/svg/plus.svg">
+      <div class="panel_wrapper">
+        <div class="styles-container-wrapper">
+          <span class="glyphicon glyphicon-remove exit"></span>
+          <div class="styles-container"></div>
+        </div>
+        <div class="traits-container-wrapper">
+          <span class="glyphicon glyphicon-remove exit"></span>
+          <div class="traits-container"></div>
+        </div>
+        <div class="blocks-container-wrapper">
+          <span class="glyphicon glyphicon-remove exit"></span>
+          <div class="blocks-container"></div>
+        </div>
+        <div class="text-editor-wrapper">
+          <span class="glyphicon glyphicon-remove exit"></span>
+          <div class="text-editor"></div>
+        </div>
+
+        <div class="collapse_wrapper collapse">
+          <div class="scroll-hidden">
+            <button type="button" class="panel_button" child="blocks-container-wrapper" filter="text">Text</button>
+            <button type="button" class="panel_button" child="blocks-container-wrapper" filter="sections">Headers</button>
+            <button type="button" class="panel_button" child="blocks-container-wrapper" filter="containers">Containers</button>
+            <button type="button" class="panel_button" child="blocks-container-wrapper" filter="buttons">Buttons</button>
+            <button type="button" class="panel_button" child="blocks-container-wrapper" filter="images">Images</button>
+            <button type="button" class="panel_button" child="blocks-container-wrapper" filter="sections">Footers</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="/static/editor/plugins/styles.js"></script>
+  <script src="/static/editor/plugins/blocks.js"></script>
+  <script src="/static/editor/plugins/traits.js"></script>
+  <script src="/static/editor/plugins/commands.js"></script>
+  <script src="/static/grapesjs/dist/grapes.min.js"></script>
+  <script src="/static/editor/js/editor.js"></script>
+</body>
+</html>

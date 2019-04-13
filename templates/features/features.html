@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block content %}
+{% include 'components/header.html' %}
+
+<head>
+  <link rel="stylesheet" href="/static/css/features.css" />
+</head>
+
+<section class="body-start">
+  <div class="title">
+    <h1>All the tools you need for a successful site.</h1>
+    <div id="cycle">
+      <p>Design tools</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="info">
+    <div class="info-title">
+      <h2>Design tools</h2>
+    </div>
+    <div class="info-expanded">
+      <p>Every template includes a set of easy, simple, and powerful design tools to
+         alter just about everything and make it yours. <a href="{{ url_for('features', name='designtools') }}">Read more</a></p>
+    </div>
+  </div>
+  <div class="info">
+    <div class="info-title">
+      <h2>Hosting services</h2>
+    </div>
+    <div class="info-expanded">
+      <p>Every template includes a set of easy, simple, and powerful design tools to
+         alter just about everything and make it yours. <a href="{{ url_for('features', name='designtools') }}">Read more</a></p>
+    </div>
+  </div>
+  <div class="info">
+    <div class="info-title">
+      <h2>Custom domain name</h2>
+    </div>
+    <div class="info-expanded">
+      <p>Every template includes a set of easy, simple, and powerful design tools to
+         alter just about everything and make it yours. <a href="{{ url_for('features', name='designtools') }}">Read more</a></p>
+    </div>
+  </div>
+  <div class="info">
+    <div class="info-title">
+      <h2>Storage space</h2>
+    </div>
+    <div class="info-expanded">
+      <p>Every template includes a set of easy, simple, and powerful design tools to
+         alter just about everything and make it yours. <a href="{{ url_for('features', name='designtools') }}">Read more</a></p>
+    </div>
+  </div>
+</section>
+
+{{ footer }}
+{% endblock %}

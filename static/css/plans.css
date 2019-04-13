@@ -1,0 +1,67 @@
+.body-start {
+  margin-top: 10vh;
+  padding: 10vh;
+  background-color: white;
+  height: 100%;
+}
+
+.plan {
+  box-shadow: 2px 0 4px 2px lightgrey;
+  border-radius: 2px;
+  transition: 0.2s;
+}
+
+.plan:hover {
+  transform: scale(1.01);
+  transition: 0.2s;
+}
+
+.body-start h1, .body-start h2 {
+  color: black;
+  margin: 30px;
+}
+
+.plan-title {
+  text-align: center;
+  background: linear-gradient(#0080ff, #3399ff, #66b3ff);
+  width: 100%;
+  height: 10vh;
+  margin: auto;
+}
+
+.plan-title h2 {
+  color: black;
+  font-size: 36px;
+  text-align: center;
+  padding: 20px;
+}
+
+.plan-price {
+  text-align: center;
+  font-style: italic;
+  font-weight: bold;
+  padding-bottom: 20px;
+}
+
+.divider {
+  width: 80%;
+  margin: 20px auto 20px auto;
+  border-bottom: solid;
+  border-width: 2px;
+  border-color: #3399ff;
+}
+
+.plan-features {
+  list-style: none;
+  padding-top: 20px;
+}
+
+.plan-features li {
+  list-style: none;
+  padding-bottom: 30px;
+  font-size: 16px;
+}
+
+#recommended {
+  margin-top: -30px;
+}

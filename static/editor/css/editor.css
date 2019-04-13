@@ -1,0 +1,419 @@
+html, body {ax
+/*  background-color: #003366;*/
+  background-color: white;
+  overflow: hidden;
+}
+
+h1 {
+  font-family: "Cutive", serif;
+}
+
+.gjs-one-bg {
+  background-color: #003366;
+}
+
+.panel__top {
+  position: fixed;
+  padding: 10px;
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+}
+
+.panel__right {
+  position: absolute;
+  border-style: solid;
+  z-index: 2;
+  height: 100%;
+  width: 25vw;
+  right: 0;
+  top: 13vh;
+  display: flex;
+  padding: 25px;
+  flex-flow: column wrap;
+  justify-content: center;
+  transition: 0.5s ease;
+}
+
+#gjs {
+  border-style: none;
+  overflow: hidden;
+}
+
+.gjs-editor {
+  width: 100%;
+}
+
+#layers-button {
+  padding: 20px;
+  font-size: 20px;
+}
+
+.gjs-toolbar {
+  background-color: transparent;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 -10px;
+  transition: 0.2s ease;
+}
+
+.gjs-toolbar-item {
+  display: inline-flex;
+  align-items: center;
+  align-content: center;
+  background-size: 60%;
+  min-width: 40px;
+  min-height: 50px;
+  width: auto;
+  height: auto;
+  color: black;
+  background-color: white;
+  margin: 5px 10px 0 10px;
+  border-radius: 10px;
+}
+
+.toolbard-edit {
+  width: auto;
+}
+
+.toolbar-edit::after {
+  content: 'Edit text';
+  font-size: 16px;
+}
+
+.toolbar-style {
+  background: url('/static/svg/file-media.svg');
+  display: inline-flex;
+  align-items: center;
+  align-content: center;
+  background-size: 60%;
+  min-width: 40px;
+  min-height: 50px;
+  width: auto;
+  height: auto;
+  color: black;
+  background-color: white;
+  margin: 5px 10px 0 10px;
+  border-radius: 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgb(255, 255, 255, 0.5);
+  transition: 0.2s;
+}
+
+.toolbar-settings {
+  background: url('/static/svg/gear.svg');
+  display: inline-flex;
+  align-items: center;
+  align-content: center;
+  background-size: 60%;
+  min-width: 40px;
+  min-height: 50px;
+  width: auto;
+  height: auto;
+  color: black;
+  background-color: white;
+  margin: 5px 10px 0 10px;
+  border-radius: 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgb(255, 255, 255, 0.5);
+  transition: 0.2s;
+}
+
+.toolbar-move {
+  background: url('/static/svg/grid-four-up.svg');
+  cursor: move;
+  display: inline-flex;
+  align-items: center;
+  align-content: center;
+  background-size: 60%;
+  min-width: 40px;
+  min-height: 50px;
+  width: auto;
+  height: auto;
+  color: black;
+  background-color: white;
+  margin: 5px 10px 0 10px;
+  border-radius: 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgb(255, 255, 255, 0.5);
+  transition: 0.2s;
+}
+
+.toolbar-duplicate {
+  background: url('/static/svg/diff.svg');
+  display: inline-flex;
+  align-items: center;
+  align-content: center;
+  background-size: 60%;
+  min-width: 40px;
+  min-height: 50px;
+  width: auto;
+  height: auto;
+  color: black;
+  background-color: white;
+  margin: 5px 10px 0 10px;
+  border-radius: 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgb(255, 255, 255, 0.5);
+  transition: 0.2s;
+}
+
+.gjs-toolbar-item:hover {
+  background-color: rgb(255, 255, 255, 1);
+  transform: translateY(-3px);
+  filter: drop-shadow(2px 2px 1px grey);
+  transition: 0.2s;
+}
+
+.gjs-cv-canvas {
+  position: absolute;
+  top: 10%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+}
+
+.panel_button {
+  padding: 20px 5px 20px 5px;
+  width: 90%;
+  border-radius: 20px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #f2f2f2;
+  background-color: white;
+  margin-bottom: 20px;
+  transition: 0.2s;
+}
+
+.panel_button:hover {
+  border-color: transparent;
+  box-shadow: 1px 3px 20px -5px black;
+  transform: translateY(-5px);
+  transition: 0.5s;
+}
+
+.scroll-hidden {
+  height: 100%;
+  width: 130%;
+  padding: 5px;
+  padding-top: 10px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.editor_panel {
+  position: absolute;
+  left: 0;
+  top: 20%;
+  height: 60%;
+  width: 11%;
+  background-color: rgb(255, 255, 255, 0);
+  z-index: 100;
+  padding: 2px;
+  border-radius: 20px;
+  border-style: none;
+  border-width: 2px;
+  border-color: #f2f2f2;
+  transition: 0.2s ease;
+}
+
+.collapse_button {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+  margin-top: 50px;
+  margin-left: 60px;
+  border-radius: 20px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #f2f2f2;
+  background-color: white;
+  transition: 0.2s;
+}
+
+.collapse_button:hover {
+  border-color: transparent;
+  box-shadow: 0px 2px 16px -3px black;
+  transform: translateY(-5px);
+  transition: 0.5s;
+}
+
+.panel_button:focus {
+  outline: none;
+}
+
+.panel_wrapper {
+  position: relative;
+  border-radius: 10px;
+  padding: 25px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+}
+
+.collapse_wrapper {
+  padding: 5px;
+  padding-top: 5px;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #f2f2f2;
+  transition: 0.5s;
+}
+
+.styles-container-wrapper, .traits-container-wrapper, .blocks-container-wrapper, .text-editor-wrapper {
+  position: absolute;
+  border-radius: 10px;
+  top: 0;
+  width: 25vw;
+  height: auto;
+  min-height: 90%;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 2px 2px 24px -4px black;
+  transition: 0.5s;
+  left: 115%;
+  opacity: 0;
+  visibility: hidden;
+}
+
+
+.layers-container-wrapper {
+  position: absolute;
+  background-color: #004080;
+  top: 5%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  padding: 20px;
+  box-shadow: 2px 2px 24px -4px black;
+  transition: 0.5s;
+}
+
+.blocks-container-wrapper {
+  width: 50vw;
+}
+
+.layers-container-wrapper.active, .styles-container-wrapper.active, .traits-container-wrapper.active, .blocks-container-wrapper.active,
+  .text-editor-wrapper.active {
+  opacity: 1;
+  visibility: visible;
+  transition: 0.5s;
+}
+
+.exit {
+  width: 10%;
+  margin-left: 95%;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: 0.2s;
+}
+
+.exit:hover {
+  transition: 0.2s;
+  color: #d9d9d9;
+}
+
+.layers-container, .styles-container, .traits-container, .blocks-container, .text-editor {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-height: 60vh;
+    overflow-y: auto;
+    border-radius: 15px;
+}
+
+.layers-container span, .layers-container div, .styles-container span, .styles-container div,
+.traits-container span, .traits-container div, .blocks-container span, .blocks-container div {
+  font-size: 1.01em;
+}
+
+.layers-container i, .styles-container i, .traits-container i, .blocks-container i {
+  font-size: 1em;
+}
+
+.panel__switcher {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.gjs-block {
+  position: relative;
+  width: auto;
+  height: auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #0073e6;
+  border-style: none;
+  outline: none;
+  transition: 0.5s;
+}
+
+.gjs-block:hover {
+  transition: 0.5s;
+  transform: translateY(-5px);
+  box-shadow: 7px 5px 24px -3px black;
+  color: black;
+}
+
+.gjs-blocks-cs {
+  background-color: #0073e6;
+}
+
+.gjs-block img {
+  width: 80%;
+  height: 80%;
+}
+
+.panel__basic-actions {
+  position: initial;
+}
+
+
+.CodeMirror-linenumber {
+  visibility: hidden;
+}
+
+/*---------------blocks-------------------*/
+
+
+.button-1 {
+  padding: 10px 30px 10px 30px;
+  background-color: #3333cc;
+  border-style: none;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+
+.button-1:hover {
+  background-color: #7070db;
+  transition: 0.2s;
+}
+
+.button-2 {
+  padding: 10px 20px 10px 20px;
+  background-color: #ff3300;
+  border-style: none;
+  border-radius: 100%;
+  box-shadow: 2px 2px 10px -2px black;
+  transition: 0.2s;
+}
+.button-2:hover {
+  background-color: #e62e00;
+  transition: 0.2s;
+}

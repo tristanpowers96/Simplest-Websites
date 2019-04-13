@@ -1,0 +1,23 @@
+{% extends 'dashboard/dashboard.html' %}
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="category">
+        <div class="category-title">
+          <h2>Account</h2>
+        </div>
+        <div class="category-content">
+          <p>Username: {{current_user.username}}</p>
+          <p>Email: {{current_user.email}}</p>
+          <p>Current plan: {{current_user.plan}}
+          {% if current_user.plan == 'Free' %}
+          <button type="button"><a href="">Upgrade</a></button>
+          {% endif %}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

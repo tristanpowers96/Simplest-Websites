@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+{% block content %}
+{% include 'components/header.html' %}
+
+<head>
+  <link rel="stylesheet" href="/static/css/plans.css" />
+</head>
+
+<section class="body-start">
+  <h1>Plans</h1>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="plan">
+        <div class="plan-title" style="opacity: 0.7">
+          <h2>Free</h2>
+        </div>
+        <div class="plan-price">
+          <h3>Free</h3>
+        </div>
+        <div class="divider"></div>
+        <div class="plan-features">
+          <ul>
+            <li><b>$0</b> monthly charge</li>
+            <li>Access to free templates</li>
+            <li>Access to free editing tools</li>
+            <li>SimplestSites subdomain</li>
+            <li>2GB Bandwidth</li>
+            <li>5GB Storage</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="plan">
+        <div class="plan-title" style="background: linear-gradient(#00ff00, #33ff33, #66ff66, #99ff99)">
+          <h2>Essential</h2>
+        </div>
+        <div class="plan-price">
+          <h3><b>$10</b>/month</h3>
+        </div>
+        <div class="divider"></div>
+        <div class="plan-features">
+          <ul>
+            <li><b>$10</b> monthly charge</li>
+            <li>Remove SimplestSites branding</li>
+            <li>Access to free templates</li>
+            <li>Access to <b>premium</b> editing tools</li>
+            <li>Custom domain use</li>
+            <li>5GB Bandwidth</li>
+            <li>10GB Storage</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="plan">
+        <div class="plan-title" id="recommended" style="background: linear-gradient(to bottom right, #a3a3c2, #f0f0f5, #c2c2d6)">
+          <h2>Upgraded</h2>
+        </div>
+        <div class="plan-price">
+          <h3><b>$20</b>/month</h3>
+          <h3><b>(Recommended)</b></h3>
+        </div>
+        <div class="divider"></div>
+        <div class="plan-features">
+          <ul>
+            <li><b>$20</b> monthly charge</li>
+            <li>Remove SimplestSites branding</li>
+            <li>Access to <b>premium</b> templates</li>
+            <li>Access to <b>premium</b> editing tools</li>
+            <li>Custom domain use</li>
+            <li>20GB Bandwidth</li>
+            <li>20GB Storage</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="plan">
+        <div class="plan-title" style="background: linear-gradient(to bottom right, #e6e600, #ffff1a, #ffffe6, #ffff99)">
+          <h2>Premium</h2>
+        </div>
+        <div class="plan-price">
+          <h3><b>$30</b>/month</h3>
+        </div>
+        <div class="divider"></div>
+        <div class="plan-features">
+          <ul>
+            <li><b>$30</b> monthly charge</li>
+            <li>Remove SimplestSites branding</li>
+            <li>Set up <b>shopping cart</b> to accept online payments</li>
+            <li>Access to <b>premium</b> templates</li>
+            <li>Access to <b>premium</b> editing tools</li>
+            <li><b>Free</b> domain name</li>
+            <li>Custom domain use</li>
+            <li><b>Unlimited</b> Bandwidth</li>
+            <li>50GB Storage</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h1>Additional Plans and Features</h1>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="plan">
+        <div class="plan-title">
+          <h2>Custom Plan</h2>
+        </div>
+        <div class="plan-price">
+          <h3>Choose the features you need</h3>
+        </div>
+        <div class="divider"></div>
+        <div class="plan-features">
+          <ul>
+            <li>Access to <b>free or premium</b> templates</li>
+            <li>Access to <b>free or premium</b> editing tools</li>
+            <li>SimplestSites subdomain <b>or</b> Custom domain use</li>
+            <li><b>Custom</b> Bandwidth</li>
+            <li><b>Custom</b> Storage</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+
+    </div>
+    <div class="col-md-4">
+      <div class="plan">
+        <div class="plan-title">
+          <h2>Additional Storage</h2>
+        </div>
+        <div class="plan-price">
+          <h3><b>$15</b>/100GB</h3>
+        </div>
+        <div class="divider"></div>
+        <div class="plan-features">
+          <ul>
+            <li>Attach additional storage space to your site</li>
+            <li>Use it for website files or whatever you like!</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="placeholder"></div>
+{{ footer }}
+{% endblock %}

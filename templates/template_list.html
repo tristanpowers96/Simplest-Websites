@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include 'components/header.html' %}
+
+<head>
+  <link rel="stylesheet" href="/static/css/template_list.css" />
+  <script src="/static/js/template_list.js"></script>
+</head>
+
+<section class="side-bar">
+  <div class="button-wrapper">
+    <button type="button">All</button>
+    <button type="button">Retail</button>
+    <button type="button">Blog</button>
+    <button type="button">Creative</button>
+  </div>
+</section>
+
+<div class="image-focus">
+  <div class="content">
+    <h2></h2>
+    <span class="glyphicon glyphicon-remove"></span>
+    <img src="/static/images/background.jpg" alt="">
+    <div class="caption">
+      <button type="button" id="preview">Preview</button>
+      <button type="submit" id="edit">Use this template</button>
+    </div>
+  </div>
+</div>
+
+<section class="body-start">
+  <div class="container">
+    <div class="row">
+      <div class="templates-title">
+        <h1>Templates</h1>
+      </div>
+    </div>
+    <div class="row">
+      {% for template in templates %}
+      <div class="col-xs-12 col-sm-6 col-md-4 tile">
+        <img class="thumbnail" src="{{Image.query.filter_by(id=template.preview).first().url}}" alt="">
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<div class="placeholder"></div>
+<div class="placeholder"></div>
+{{ footer }}
+{% endblock %}

@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<head>
+  <link rel="stylesheet" href="/static/css/login.css" />
+  <script src="/static/js/login.js"></script>
+  <meta name="google-signin-client_id" content="334234312073-hp2gc3m29arf7h8v4r3iohuhocujjucb.apps.googleusercontent.com">
+  <script>
+/*
+    function start() {
+      gapi.load('auth2', function() {
+        auth2 = gapi.auth2.init({
+          client_id: '334234312073-hp2gc3m29arf7h8v4r3iohuhocujjucb.apps.googleusercontent.com',
+          scope: 'profile',
+        }).then(render());
+      });
+    }
+*/
+    function render() {
+      gapi.signin2.render('google-signIn', {
+        'scope': 'profile email',
+        'width': 240,
+        'height': 50,
+        'longtitle': true,
+        'theme': 'dark',
+        'onsuccess': function(googleUser) {
+          $('#google-signIn div div span span:last').text("Continue with Google");
+          $.ajax({
+            url: '/google_auth',
+            data: {
+
+                'id_token': googleUser.getAuthResponse().id_token,
+                'email': googleUser.getBasicProfile().getEmail(),
+
+            },
+            type: 'POST',
+            success: function(response) {
+              location.replace(response);
+            }
+          })
+        },
+      });
+    }
+
+    function handleSignIn() {
+      auth2.signIn({
+        prompt: 'select_account',
+      })
+    }
+
+  </script>
+  <script src="https://apis.google.com/js/platform.js?onload=render" async defer></script>
+</head>
+
+{% include 'components/header.html' %}
+<div class="content">
+  <div class="form-title">
+      <h1><b>Log in</b></h1>
+  </div>
+  <h2>New to Simplest Sites? <a href="{{ url_for('register') }}">Get started now!</a></h2>
+  <div class="divider-horizontal"></div>
+  <div class="container">
+    <div class="row">
+      <div class="left col-md-6">
+        <form action="" method="post">
+            {{ form.hidden_tag() }}
+            <p>
+              {{ form.username.label }}<br>
+              {{ form.username(size=32) }}<br>
+              {% for error in form.username.errors %}
+              <span style="color: red;">[{{ error }}]</span>
+              {% endfor %}
+            </p>
+            <p>
+              {{ form.password.label }}<br>
+              {{ form.password(size=32) }}<br>
+              {% for error in form.password.errors %}
+              <span style="color: red;">[{{ error }}]</span>
+              {% endfor %}
+            </p>
+            <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+            <p>{{ form.submit() }}</p>
+            <hr>
+            <span id="error" style="color: red;"></span>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            <span id="messages" style="color: red;">{{message}}</span>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+        </form>
+      </div>
+      <div class="middle col-md-1">
+        <div class="divider-vertical"></div>
+      </div>
+      <div class="right col-md-3">
+        <div id="google-signIn"></div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
