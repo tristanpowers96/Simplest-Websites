@@ -65,7 +65,7 @@ pywin32-ctypes==0.2.0
 queuelib==1.5.0
 requests==2.21.0
 requests-oauthlib==1.2.0
-rsa==4.0
+rsa==4.1
 Scrapy==1.5.1
 scrapy-fake-useragent==1.1.0
 scrapy-proxies==0.4
