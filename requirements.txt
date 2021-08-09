@@ -60,7 +60,7 @@ python-editor==1.0.4
 python-twitter==3.5
 python-whois==0.7.1
 pythonwhois==2.4.3
-pywin32==224
+pywin32==301
 pywin32-ctypes==0.2.0
 queuelib==1.5.0
 requests==2.21.0
