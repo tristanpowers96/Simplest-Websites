@@ -35,7 +35,7 @@ itsdangerous==1.1.0
 Jinja2==2.10
 lxml==4.3.0
 macholib==1.11
-Mako==1.0.7
+Mako==1.2.2
 MarkupSafe==1.1.0
 mysql-connector-python==8.0.15
 mysqlclient==1.4.2
