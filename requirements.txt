@@ -74,7 +74,7 @@ six==1.12.0
 soupsieve==1.7.2
 SQLAlchemy==1.2.18
 tweepy==3.7.0
-Twisted==18.9.0
+Twisted==22.10.0
 uritemplate==3.0.0
 urllib3==1.24.1
 virtualenv==16.1.0
